@@ -3,7 +3,7 @@ A Python type for the classic try-except statement that allows a more object-ori
 
 Inspired by [Scala Try API](https://www.scala-lang.org/api/current/scala/util/Try.html), originally implemented by [Twitter](https://twitter.com/)'s software engineers.
 
-Licensed under the [MPL-2.0 License](https://opensource.org/licenses/MPL-2.0).
+Licensed under the [MIT License](https://opensource.org/license/mit).
 
 The `Try` type represents a computation that may fail throwing an exception. If the computation is successful it returns the value wrapped in a `Success` otherwise an Exception wrapped in a `Failure`.
 
@@ -13,6 +13,7 @@ To use `Try` you need to call the `Try.to(f: Callable)` method providing a lambd
 `Try` represents the successful or failed outcome of an operation and might contain a value that was produced by said operation.
 
 ```python
+from nicetry import Try
 result = Try.to(lambda: 4 / 1)
 ```
 
@@ -122,7 +123,7 @@ def read_content(url: str, error_message: str = "Oops, something bad happened!")
         return error_message
 
 read_content("https://mofanpy.com/static/scraping/basic-structure.html")
-read_content("https://mofanpy.com/static/scraping/basic-structure.htmlx")
+read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
 
 #### Using the Try API (pattern matching approach) ####
@@ -139,7 +140,7 @@ def read_content(url: str, error_message: str = "Oops, something bad happened!")
             return error_message
 
 read_content("https://mofanpy.com/static/scraping/basic-structure.html")
-read_content("https://mofanpy.com/static/scraping/basic-structure.htmlx")
+read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
 
 #### Using the Try API (functional approach) ####
@@ -154,6 +155,5 @@ def read_content(url: str, error_message: str = "Oops, something bad happened!")
     return result
 
 read_content("https://mofanpy.com/static/scraping/basic-structure.html")
-read_content("https://mofanpy.com/static/scraping/basic-structure.htmlx")
+read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
-
