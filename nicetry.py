@@ -68,6 +68,9 @@ class Try(ABC, Generic[T]):
     >>>       print(f"Info from the exception: {e}")
     >>>
     >>> divide()
+
+    :copyright: (c) 2024 by Luiz Ricardo Belem.
+    :license: MIT, see LICENSE for more details.
     """
     __slots__ = ("_value",)
 
