@@ -69,7 +69,7 @@ class Try(ABC, Generic[T]):
     >>>
     >>> divide()
 
-    :copyright: (c) 2024 by Luiz Ricardo Belem.
+    :copyright: (c) 2023-2024 by Luiz Ricardo Belem.
     :license: MIT, see LICENSE for more details.
     """
     __slots__ = ("_value",)
