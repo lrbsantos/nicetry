@@ -1,5 +1,5 @@
 # NiceTry
-A Python type for the classic try-except statement that allows a more object-oriented and functional approach to handle exceptions.
+A Python type for the classic try-except statement that allows a more functional and declarative approach to handle exceptions.
 
 Inspired by [Scala Try API](https://www.scala-lang.org/api/current/scala/util/Try.html), originally implemented by [Twitter](https://twitter.com/)'s software engineers.
 
@@ -8,6 +8,12 @@ Licensed under the [MIT License](https://opensource.org/license/mit).
 The `Try` type represents a computation that may fail throwing an exception. If the computation is successful it returns the value wrapped in a `Success` otherwise an Exception wrapped in a `Failure`.
 
 To use `Try` you need to call the `Try.to(f: Callable)` method providing a lambda function with no parameters that invokes the method that may raise an exception.
+
+## Features
+
+- 100% pure Python
+- support to [structural pattern matching]("https://peps.python.org/pep-0636/") (`match` statement)
+- conform to original Scala Try API
 
 ## Basics
 `Try` represents the successful or failed outcome of an operation and might contain a value that was produced by said operation.
@@ -94,7 +100,7 @@ In order to get you acquainted with this API each example will be provided using
 ### Example 1: Read the HTML content of an URL ###
 As a first example consider you need to implement a method that reads the HTML content of an URL as string.
 
-#### Using the traditional try-except-finally block ####
+#### Using the traditional try-except statement ####
 ```python
 from urllib import request
 
@@ -109,7 +115,7 @@ read_content("https://mofanpy.com/static/scraping/basic-structure.html")
 read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
 
-#### Using the Try API ####
+#### Using the Try API (object-oriented approach) ####
 ```python
 from urllib import request
 from nicetry import Try
@@ -126,7 +132,7 @@ read_content("https://mofanpy.com/static/scraping/basic-structure.html")
 read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
 
-#### Using the Try API (pattern matching approach) ####
+#### Using the Try API (structural pattern matching approach) ####
 ```python
 from urllib import request
 from nicetry import Try, Success, Failure
@@ -157,3 +163,8 @@ def read_content(url: str, error_message: str = "Oops, something bad happened!")
 read_content("https://mofanpy.com/static/scraping/basic-structure.html")
 read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 ```
+
+## TODO
+
+- [ ] support to Python [context manager]("https://docs.python.org/3/reference/datamodel.html#context-managers") (the [with]("https://docs.python.org/3/reference/compound_stmts.html#the-with-statement") statement)
+- [ ] implement the remaining Scala Try API methods
