@@ -12,7 +12,7 @@ To use `Try` you need to call the `Try.to(f: Callable)` method providing a lambd
 ## Features
 
 - 100% pure Python
-- support to [structural pattern matching]("https://peps.python.org/pep-0636/") (`match` statement)
+- support to [structural pattern matching](https://peps.python.org/pep-0636/) (`match` statement)
 - conform to original Scala Try API
 
 ## Basics
@@ -166,5 +166,5 @@ read_content("https://mofanpy.com/static/scraping/basic-structure.xhtml")
 
 ## TODO
 
-- [ ] support to Python [context manager]("https://docs.python.org/3/reference/datamodel.html#context-managers") (the [with]("https://docs.python.org/3/reference/compound_stmts.html#the-with-statement") statement)
+- [ ] support to Python [context manager](https://docs.python.org/3/reference/datamodel.html#context-managers) (the [with](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement) statement)
 - [ ] implement the remaining Scala Try API methods
